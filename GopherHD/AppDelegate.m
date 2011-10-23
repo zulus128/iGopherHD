@@ -12,6 +12,13 @@
 #import "HelloWorldLayer.h"
 #import "RootViewController.h"
 
+#import "cocos2d.h"
+#import "WelcomeScreenScene.h"
+#import "GameScreenScene.h"
+#import "StatsScreenScene.h"
+#import "ScoreScreenScene.h"
+#import "Common.h"
+
 @implementation AppDelegate
 
 @synthesize window=window_;
@@ -26,13 +33,13 @@
 	//
 
 //	CC_ENABLE_DEFAULT_GL_STATES();
-//	CCDirector *director = [CCDirector sharedDirector];
-//	CGSize size = [director winSize];
-//	CCSprite *sprite = [CCSprite spriteWithFile:@"Default.png"];
-//	sprite.position = ccp(size.width/2, size.height/2);
-//	sprite.rotation = -90;
-//	[sprite visit];
-//	[[director openGLView] swapBuffers];
+	CCDirector *director = [CCDirector sharedDirector];
+	CGSize size = [director winSize];
+	CCSprite *sprite = [CCSprite spriteWithFile:@"Default.png"];
+	sprite.position = ccp(size.width/2, size.height/2);
+	sprite.rotation = -90;
+	[sprite visit];
+	[[director openGLView] swapBuffers];
 //	CC_ENABLE_DEFAULT_GL_STATES();
 }
 
@@ -90,11 +97,28 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+//	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+    
+    isFirstTime = true;
+	musicOn = YES;
+	soundOn = YES;
+    
+	// Temporary assignment
+	//lastGameStats.score = 14;
+	//lastGameStats.duration = 93.2;
+	//lastGameStats.gophers_hit = 128;
+	//nextScene = [WelcomeScreen class];
+	shouldBePaused = NO;
+    
+	[Common instance].wscene = [WelcomeScreen scene];
+	[[CCDirector sharedDirector] runWithScene: [Common instance].wscene];
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+
 	[[CCDirector sharedDirector] pause];
 }
 
@@ -103,6 +127,9 @@
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    
+    [[CCTextureCache sharedTextureCache] removeUnusedTextures];
+    
 	[[CCDirector sharedDirector] purgeCachedData];
 }
 
@@ -115,6 +142,9 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+    
 	CCDirector *director = [CCDirector sharedDirector];
 	
 	[[director openGLView] removeFromSuperview];

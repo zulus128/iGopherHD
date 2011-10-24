@@ -72,7 +72,8 @@ int const SPEED_TABLE[20][3] = {
 // Holes position
 //int const HOLES_POSITIONS[6][2] = { {110, 70}, {370, 70}, {240, 115}, {240, 40}, {390, 145}, {90, 145} };
 int const HOLES_POSITIONS[6][2] = { {200, 200}, {824, 200}, {512, 350}, {512, 80}, {924, 400}, {100, 400} };
-int const MOLE_OFFSET[2] = {9,30};
+//int const MOLE_OFFSET[2] = {9,30};
+int const MOLE_OFFSET[2] = {9,70};
 
 // Last game stats
 

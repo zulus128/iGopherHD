@@ -39,13 +39,16 @@
 		
 		// Background
 		CCSprite* background = [CCSprite spriteWithFile:@"about-screen.png"];
-		background.anchorPoint = ccp(0, 0);
-		background.position = ccp(0, 0);
+//		background.anchorPoint = ccp(0, 0);
+//		background.position = ccp(0, 0);
 		
 		[self addChild:background z:0];
 		
 		// ask director the the window size
-		//CGSize win_size = [[CCDirector sharedDirector] winSize];
+		CGSize win_size = [[CCDirector sharedDirector] winSize];
+        
+        background.position = ccp(win_size.width/2, win_size.height/2);
+
 		
 	}
 	return self;
@@ -68,7 +71,9 @@
 	  // The touches are always in "portrait" coordinates. You need to convert them to your current orientation
 	  CGPoint touchPoint = [[CCDirector sharedDirector] convertToGL:location];
 
-	  CGRect url_box = CGRectMake(80, 90, 320, 20);
+//        NSLog(@"x=%f, y=%f", touchPoint.x, touchPoint.y);
+        
+	  CGRect url_box = CGRectMake(370, 80, 300, 40);
 
 	  CGRect finger = CGRectMake(touchPoint.x - fingerSpot/2, touchPoint.y - fingerSpot/2, fingerSpot, fingerSpot);
 

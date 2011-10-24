@@ -123,7 +123,7 @@
 	
     // Text logo
     CCSprite* text_logo = [CCSprite spriteWithFile:@"logo.png"];
-    text_logo.position = ccp(win_size.width / 2, win_size.height / 2 + 26);
+    text_logo.position = ccp(512, 550);
     [self addChild:text_logo z:100];
 
     // create and initialize "Tap to Start" label
@@ -131,15 +131,15 @@
     //tap_label.position =  ccp( win_size.width /2 , win_size.height/2 - 64 );
     //[self addChild: tap_label];
     CCSprite* start_label = [CCSprite spriteWithFile:@"but-start.png"];
-    start_label.position = ccp( win_size.width / 2, 120 );
+    start_label.position = ccp( 512, 250 );
     [self addChild:start_label z:100 tag:O_WEL_START_LABEL];
 
     CCSprite* score_label = [CCSprite spriteWithFile:@"but-score.png"];
-    score_label.position = ccp( win_size.width / 2, 70 );
+    score_label.position = ccp( 512, 150 );
     [self addChild:score_label z:100 tag:O_WEL_SCORE_LABEL];
 
     CCSprite* about_label = [CCSprite spriteWithFile:@"but-about.png"];
-    about_label.position = ccp( win_size.width / 2, 30 );
+    about_label.position = ccp( 512, 60 );
     [self addChild:about_label z:100 tag:O_WEL_ABOUT_LABEL];
 
     // Music & Sound buttons

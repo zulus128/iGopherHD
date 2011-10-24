@@ -1005,13 +1005,13 @@
 				DD965AFE1453C86A007BCDCB /* toggler.png */,
 				DD965AFF1453C86A007BCDCB /* music-off.png */,
 				DD965B001453C86A007BCDCB /* music-on.png */,
+				DD965B081453C86A007BCDCB /* shot-smoke-1.png */,
 				DD965B011453C86A007BCDCB /* sound-off.png */,
 				DD965B021453C86A007BCDCB /* sound-on.png */,
 				DD965B031453C86A007BCDCB /* logo.png */,
 				DD965B041453C86A007BCDCB /* green-bg-pause.png */,
 				DD965B051453C86A007BCDCB /* green-bg.png */,
 				DD965B061453C86A007BCDCB /* sun.png */,
-				DD965B081453C86A007BCDCB /* shot-smoke-1.png */,
 				DD965B091453C86A007BCDCB /* shot-smoke-2.png */,
 				DD965B0A1453C86A007BCDCB /* shot-smoke-3.png */,
 				DD965B0B1453C86A007BCDCB /* shot-smoke-4.png */,
@@ -1293,7 +1293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: VADIM KASSIN (744XFE3JS8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Evgeniy Makarov (XKCBJVY5M5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1306,7 +1306,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "9C5D53AC-4AA2-46C9-B45A-47D08346A458";
+				PROVISIONING_PROFILE = "F5B38FED-F678-4F35-9D53-5E179DFD9CB1";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1315,6 +1315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Evgeniy Makarov (XKCBJVY5M5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1325,6 +1326,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PROVISIONING_PROFILE = "F5B38FED-F678-4F35-9D53-5E179DFD9CB1";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

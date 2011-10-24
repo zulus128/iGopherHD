@@ -60,11 +60,17 @@
 	//	2. depth format of 0 bit. Use 16 or 24 bit for 3d effects, like CCPageTurnTransition
 	//
 	//
-	EAGLView *glView = [EAGLView viewWithFrame:[window_ bounds]
-								   pixelFormat:kEAGLColorFormatRGB565	// kEAGLColorFormatRGBA8
-								   depthFormat:0						// GL_DEPTH_COMPONENT16_OES
-						];
 	
+//    EAGLView *glView = [EAGLView viewWithFrame:[window_ bounds]
+//								   pixelFormat:kEAGLColorFormatRGB565	// kEAGLColorFormatRGBA8
+//								   depthFormat:0						// GL_DEPTH_COMPONENT16_OES
+//						];
+//	
+
+    EAGLView *glView = [EAGLView viewWithFrame:[window_ bounds]
+                                   pixelFormat:kEAGLColorFormatRGBA8
+                                   depthFormat:GL_DEPTH_COMPONENT16_OES];
+    
 	// attach the openglView to the director
 	[director setOpenGLView:glView];
 	
@@ -87,8 +93,8 @@
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
 	// You can change anytime.
-	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
-	
+//	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
+	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
 	// PVR Textures have alpha premultiplied
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 	

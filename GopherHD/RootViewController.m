@@ -49,13 +49,13 @@
 	// return YES for the supported orientations
 
 	// Only landscape ?
-//	return ( UIInterfaceOrientationIsLandscape( interfaceOrientation ) );
+	return ( UIInterfaceOrientationIsLandscape( interfaceOrientation ) );
 
 	// Only portrait ?
 //	return ( ! UIInterfaceOrientationIsLandscape( interfaceOrientation ) );
 
 	// All orientations ?
-	return YES;
+//	return YES;
 }
 
 

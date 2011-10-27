@@ -589,11 +589,11 @@
   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
   CGSize win_size = [[CCDirector sharedDirector] winSize];
   CCLayerColor *gameover_layer = [CCLayerColor layerWithColor:ccc4(0,0,0,127)];
-  CCLabelTTF *gameover_label = [CCLabelTTF labelWithString:@"Game Over" fontName:@"Marker Felt" fontSize:32];
-  gameover_label.position = ccp(win_size.width/2, win_size.height/2 + 16);
+  CCLabelTTF *gameover_label = [CCLabelTTF labelWithString:@"Game Over" fontName:@"Marker Felt" fontSize:32*4];
+  gameover_label.position = ccp(win_size.width/2, win_size.height/2 + 16*4);
   [gameover_layer addChild:gameover_label];
-  CCLabelTTF* tap_label = [CCLabelTTF labelWithString:@"Tap to continue" fontName:@"Marker Felt" fontSize:24];
-  tap_label.position = ccp(win_size.width/2, win_size.height/2 - 12);
+  CCLabelTTF* tap_label = [CCLabelTTF labelWithString:@"Tap to continue" fontName:@"Marker Felt" fontSize:24*4];
+  tap_label.position = ccp(win_size.width/2, win_size.height/2 - 12*4);
   [gameover_layer addChild:tap_label];
   [self addChild:gameover_layer z:1000 tag:O_GAMEOVER_LAYER];
 

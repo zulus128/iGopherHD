@@ -38,7 +38,7 @@
 		[self schedule:@selector(update:)];
 		
 		// Background
-		CCSprite* background = [CCSprite spriteWithFile:@"about-screen.png"];
+		CCSprite* background = [CCSprite spriteWithFile:@"green-bg.png"];
 //		background.anchorPoint = ccp(0, 0);
 //		background.position = ccp(0, 0);
 		
@@ -49,6 +49,10 @@
         
         background.position = ccp(win_size.width/2, win_size.height/2);
 
+        CCSprite* background1 = [CCSprite spriteWithFile:@"about-screen.png"];
+        background1.position = ccp(win_size.width/2, win_size.height/2);
+
+		[self addChild:background1 z:10];
 		
 	}
 	return self;

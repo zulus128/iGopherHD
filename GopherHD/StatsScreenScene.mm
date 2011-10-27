@@ -105,36 +105,36 @@
 
 	  // Text labels
 
-	  CCLabelTTF* score_txt_label = [CCLabelTTF labelWithString:@"Score:" fontName:@"Marker Felt" fontSize:32];
+	  CCLabelTTF* score_txt_label = [CCLabelTTF labelWithString:@"Score:" fontName:@"Marker Felt" fontSize:32*2];
 	  score_txt_label.anchorPoint = ccp(0, 0.5);
-	  score_txt_label.position = ccp(60, win_size.height - 90);
+	  score_txt_label.position = ccp(60, win_size.height - 90 - 200);
 	  [self addChild: score_txt_label z:250];
 
-	  CCLabelTTF* duration_txt_label = [CCLabelTTF labelWithString:@"Round duration:" fontName:@"Marker Felt" fontSize:32];
+	  CCLabelTTF* duration_txt_label = [CCLabelTTF labelWithString:@"Round duration:" fontName:@"Marker Felt" fontSize:32*2];
 	  duration_txt_label.anchorPoint = ccp(0, 0.5);
-	  duration_txt_label.position = ccp(60, win_size.height - 90 - 32 - 8);
+	  duration_txt_label.position = ccp(60, win_size.height - 90 - 32 - 8*4 - 200);
 	  [self addChild: duration_txt_label z:250];
 
-	  CCLabelTTF* gophers_txt_label = [CCLabelTTF labelWithString:@"Gophers hit:" fontName:@"Marker Felt" fontSize:32];
+	  CCLabelTTF* gophers_txt_label = [CCLabelTTF labelWithString:@"Gophers hit:" fontName:@"Marker Felt" fontSize:32*2];
 	  gophers_txt_label.anchorPoint = ccp(0, 0.5);
-	  gophers_txt_label.position = ccp(60, win_size.height - 90 - 32*2 - 8*2);
+	  gophers_txt_label.position = ccp(60, win_size.height - 90 - 32*2 - 8*2*4 - 200);
 	  [self addChild: gophers_txt_label z:250];
 
 	  // Num labels
 
-	  CCLabelTTF* score_num_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", lastGameStats.score] fontName:@"Marker Felt" fontSize:32];
+	  CCLabelTTF* score_num_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", lastGameStats.score] fontName:@"Marker Felt" fontSize:32*2];
 	  score_num_label.anchorPoint = ccp(1, 0.5);
-	  score_num_label.position = ccp(win_size.width - 60, win_size.height - 90);
+	  score_num_label.position = ccp(win_size.width - 60, win_size.height - 90 - 200);
 	  [self addChild: score_num_label z:250];
 
-	  CCLabelTTF* duration_num_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d:%02d", (int)lastGameStats.duration / 60, (int)lastGameStats.duration % 60] fontName:@"Marker Felt" fontSize:32];
+	  CCLabelTTF* duration_num_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d:%02d", (int)lastGameStats.duration / 60, (int)lastGameStats.duration % 60] fontName:@"Marker Felt" fontSize:32*2];
 	  duration_num_label.anchorPoint = ccp(1, 0.5);
-	  duration_num_label.position = ccp(win_size.width - 60, win_size.height - 90 - 32 - 8);
+	  duration_num_label.position = ccp(win_size.width - 60, win_size.height - 90 - 32 - 8*4 - 200);
 	  [self addChild: duration_num_label z:250];
 
-	  CCLabelTTF* gophers_num_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", lastGameStats.gophers_hit] fontName:@"Marker Felt" fontSize:32];
+	  CCLabelTTF* gophers_num_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", lastGameStats.gophers_hit] fontName:@"Marker Felt" fontSize:32*2];
 	  gophers_num_label.anchorPoint = ccp(1, 0.5);
-	  gophers_num_label.position = ccp(win_size.width - 60, win_size.height - 90 - 32*2 - 8*2);
+	  gophers_num_label.position = ccp(win_size.width - 60, win_size.height - 90 - 32*2 - 8*2*4 - 200);
 	  [self addChild: gophers_num_label z:250];
 
 	  

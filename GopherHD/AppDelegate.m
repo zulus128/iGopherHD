@@ -32,13 +32,13 @@
 	//
 
 //	CC_ENABLE_DEFAULT_GL_STATES();
-	CCDirector *director = [CCDirector sharedDirector];
-	CGSize size = [director winSize];
-	CCSprite *sprite = [CCSprite spriteWithFile:@"Default.png"];
-	sprite.position = ccp(size.width/2, size.height/2);
-	sprite.rotation = -90;
-	[sprite visit];
-	[[director openGLView] swapBuffers];
+//	CCDirector *director = [CCDirector sharedDirector];
+//	CGSize size = [director winSize];
+//	CCSprite *sprite = [CCSprite spriteWithFile:@"Default.png"];
+//	sprite.position = ccp(size.width/2, size.height/2);
+//	sprite.rotation = -90;
+//	[sprite visit];
+//	[[director openGLView] swapBuffers];
 //	CC_ENABLE_DEFAULT_GL_STATES();
 }
 
@@ -114,6 +114,8 @@
 	//lastGameStats.gophers_hit = 128;
 	//nextScene = [WelcomeScreen class];
 	shouldBePaused = NO;
+    
+    [NSThread sleepForTimeInterval:2];
     
 	[Common instance].wscene = [WelcomeScreen scene];
 	[[CCDirector sharedDirector] runWithScene: [Common instance].wscene];

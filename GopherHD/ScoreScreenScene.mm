@@ -73,10 +73,11 @@
 		
 		
 		// Text labels
+        int a = 40;
 		
-		CCLabelTTF* score_label = [CCLabelTTF labelWithString:@"High score" fontName:@"Marker Felt" fontSize:32];
+		CCLabelTTF* score_label = [CCLabelTTF labelWithString:@"High score" fontName:@"Marker Felt" fontSize:44];
 		//score_txt_label.anchorPoint = ccp(0, 0.5);
-		score_label.position = ccp(win_size.width/2, win_size.height - 24);
+		score_label.position = ccp(win_size.width/2, win_size.height - a);
 		[self addChild: score_label z:250];
 
 		// Scores
@@ -98,6 +99,7 @@
 		  [self saveScores];
 		}
 
+        lastGameStats.score = 47000;
 		// Inserting new score
 		rank = 0;
 		for( id item in scores ) {
@@ -121,19 +123,19 @@
 		}
 
 		for(int i = 0; i < [scores count]; i++) {
-		  CCLabelTTF* num_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%2d.", i + 1] fontName:@"Marker Felt" fontSize:20];
+		  CCLabelTTF* num_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%2d.", i + 1] fontName:@"Marker Felt" fontSize:a];
 		  num_label.anchorPoint = ccp(1, 0.5);
-		  num_label.position = ccp(120 - 10, win_size.height - 58 - i * 24);
+		  num_label.position = ccp(120 - 10, win_size.height - 58 - i * a);
 		  [self addChild: num_label z:250];
 
-		  CCLabelTTF* name_label = [CCLabelTTF labelWithString:[[scores objectAtIndex:i] objectAtIndex:0] fontName:@"Marker Felt" fontSize:20];
+		  CCLabelTTF* name_label = [CCLabelTTF labelWithString:[[scores objectAtIndex:i] objectAtIndex:0] fontName:@"Marker Felt" fontSize:a];
 		  name_label.anchorPoint = ccp(0, 0.5);
-		  name_label.position = ccp(120, win_size.height - 58 - i * 24);
+		  name_label.position = ccp(120, win_size.height - 58 - i * a);
 		  [self addChild: name_label z:250];
 
-		  CCLabelTTF* score_label = [CCLabelTTF labelWithString:[[[scores objectAtIndex:i] objectAtIndex:1] stringValue] fontName:@"Marker Felt" fontSize:20];
+		  CCLabelTTF* score_label = [CCLabelTTF labelWithString:[[[scores objectAtIndex:i] objectAtIndex:1] stringValue] fontName:@"Marker Felt" fontSize:a];
 		  score_label.anchorPoint = ccp(1, 0.5);
-		  score_label.position = ccp(win_size.width - 120, win_size.height - 58 - i * 24);
+		  score_label.position = ccp(win_size.width - 120, win_size.height - 58 - i * a);
 		  [self addChild: score_label z:250];
 		}
 
@@ -141,15 +143,15 @@
 		if( rank < 10 && lastGameStats.score > 0 ) {
 		  CGRect frame = [[[CCDirector sharedDirector] openGLView] frame];
 		  playerNameEntry = [[UITextField alloc] initWithFrame:frame]; 
-		  [playerNameEntry setTransform:CGAffineTransformMakeRotation(M_PI/2)];
+//		  [playerNameEntry setTransform:CGAffineTransformMakeRotation(M_PI/2)];
 		  playerNameEntry.clearsOnBeginEditing = YES;
-		  playerNameEntry.font = [UIFont fontWithName:@"Marker Felt" size:20];
+		  playerNameEntry.font = [UIFont fontWithName:@"Marker Felt" size:a];
 		  playerNameEntry.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
 
 		  // Positioning
-		  CGPoint convertedOrigin = [[CCDirector sharedDirector] convertToGL:ccp(120,win_size.height - 58 - 24/2 - 24*rank)];
-		  CGPoint convertedSize = [[CCDirector sharedDirector] convertToGL:ccp(160,24)];
-		  playerNameEntry.frame = CGRectMake(convertedOrigin.x, convertedOrigin.y, convertedSize.x, convertedSize.y);
+		  CGPoint convertedOrigin = [[CCDirector sharedDirector] convertToGL:ccp(120,win_size.height - a/2 - 53 - a*rank)];
+		  CGPoint convertedSize = [[CCDirector sharedDirector] convertToGL:ccp(160,a)];
+		  playerNameEntry.frame = CGRectMake(convertedOrigin.x, convertedOrigin.y - 40, convertedSize.x, convertedSize.y);
 
 		  //playerNameEntry.borderStyle = UITextBorderStyleRoundedRect;
 		  playerNameEntry.delegate = self;

@@ -73,7 +73,7 @@
 		
 		
 		// Text labels
-        int a = 40;
+        int a = 36;
 		
 		CCLabelTTF* score_label = [CCLabelTTF labelWithString:@"High score" fontName:@"Marker Felt" fontSize:44];
 		//score_txt_label.anchorPoint = ccp(0, 0.5);
@@ -99,7 +99,7 @@
 		  [self saveScores];
 		}
 
-        lastGameStats.score = 47000;
+//        lastGameStats.score = 1e10;
 		// Inserting new score
 		rank = 0;
 		for( id item in scores ) {
@@ -109,13 +109,13 @@
 		  rank++;
 		};
 
-		if( rank < 3 ) {
-		  screenOffset = 0;
-		} else if( rank < 7 ) {
-		  screenOffset = 80;
-		} else if( rank < 10 ) {
-		  screenOffset = 160;
-		};
+//		if( rank < 3 ) {
+//		  screenOffset = 0;
+//		} else if( rank < 7 ) {
+//		  screenOffset = 60;
+//		} else if( rank < 10 ) {
+//		  screenOffset = 120;
+//		};
 
 		if( lastGameStats.score > 0 ) {
 		  [scores insertObject:[NSArray arrayWithObjects: @"", [NSNumber numberWithInt: lastGameStats.score], nil] atIndex:rank];
@@ -149,9 +149,9 @@
 		  playerNameEntry.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
 
 		  // Positioning
-		  CGPoint convertedOrigin = [[CCDirector sharedDirector] convertToGL:ccp(120,win_size.height - a/2 - 53 - a*rank)];
+		  CGPoint convertedOrigin = [[CCDirector sharedDirector] convertToGL:ccp(120,win_size.height - 35 - a*rank)];
 		  CGPoint convertedSize = [[CCDirector sharedDirector] convertToGL:ccp(160,a)];
-		  playerNameEntry.frame = CGRectMake(convertedOrigin.x, convertedOrigin.y - 40, convertedSize.x, convertedSize.y);
+		  playerNameEntry.frame = CGRectMake(convertedOrigin.x, convertedOrigin.y, convertedSize.x, convertedSize.y);
 
 		  //playerNameEntry.borderStyle = UITextBorderStyleRoundedRect;
 		  playerNameEntry.delegate = self;
@@ -194,7 +194,11 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-  [self runAction:[CCMoveBy actionWithDuration:0.25f position:ccp(0, -screenOffset)]];
+
+    [self runAction:[CCMoveBy actionWithDuration:0.25f position:ccp(0, -screenOffset)]];
+//    CGRect frame = playerNameEntry.frame;
+//    frame.origin.y = frame.origin.y + screenOffset;
+//    playerNameEntry.frame = frame;
 }
 
 -(void) textFieldShouldReturn:(UITextField *)textField {

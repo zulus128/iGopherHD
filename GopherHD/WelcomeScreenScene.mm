@@ -191,9 +191,9 @@
 
     // Sun rays
     CCSprite* sun_rays = [CCSprite spriteWithFile:@"sun.png"];
-    sun_rays.position = ccp(150, win_size.height - 56);
+    sun_rays.position = ccp(150, win_size.height - 106);
 
-    [self addChild:sun_rays z:-3];
+    [self addChild:sun_rays z:99];
 
     // Sun rays animation
     id rays_repeat = [CCRepeatForever actionWithAction: [CCRotateBy actionWithDuration:15.0f angle:180]];
@@ -209,7 +209,7 @@
       flight_duration = 64;
 
       for(int j = 1; j <= MAX_CLOUDS; j++) {
-	int height = win_size.height - 70 + (40 * (i - 1)) + (arc4random() % 16);
+	int height = win_size.height - 140 + (80 * (i - 1)) + (arc4random() % 16);
 
 	CCSprite *cloud = [CCSprite spriteWithFile:[NSString stringWithFormat:@"cloud%d.png", 1 + arc4random() % 4]];
 	float path = 1.0/MAX_CLOUDS * j;

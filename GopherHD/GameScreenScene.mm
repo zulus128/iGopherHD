@@ -322,7 +322,7 @@
 		
     // Sun with rays
     CCSprite* sun_rays = [CCSprite spriteWithFile:@"sun.png"];
-    sun_rays.position = ccp(150, win_size.height - 56);
+    sun_rays.position = ccp(150, win_size.height - 106);
 
     [self addChild:sun_rays z:-1];
 

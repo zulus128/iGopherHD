@@ -43,10 +43,7 @@
         [Common instance].finalscore = lastGameStats.score;
         [[Common instance] submitScore];
         [[Common instance] showLeaderboard];
-        
-        nextScene = NULL;
-		[[CCDirector sharedDirector] replaceScene: [WelcomeScreen scene]];
-        
+                
 	/*
         // Clocks
 		[self schedule:@selector(update:)];

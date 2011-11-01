@@ -121,6 +121,9 @@
 - (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController {
     
     NSLog(@"leaderboardViewControllerDidFinish");
+    [viewController dismissModalViewControllerAnimated:YES];
+    [[CCDirector sharedDirector] replaceScene: [WelcomeScreen scene]];
+
 }
 
 - (void) dealloc {

@@ -270,7 +270,7 @@
 		
 		
     // create and initialize Score label
-    CCLabelTTF* score_label = [CCLabelTTF labelWithString:@"Score: 0" fontName:@"Marker Felt" fontSize:16];
+    CCLabelTTF* score_label = [CCLabelTTF labelWithString:@"Score: 0" fontName:@"Marker Felt" fontSize:16*2];
     score_label.anchorPoint = ccp(0, 1);
 		
     // ask director the window size
@@ -284,13 +284,13 @@
 
 
     // Same for Miss count label
-    CCLabelTTF* miss_count_label = [CCLabelTTF labelWithString:@"Misses: 0" fontName:@"Marker Felt" fontSize:16];
+    CCLabelTTF* miss_count_label = [CCLabelTTF labelWithString:@"Misses: 0" fontName:@"Marker Felt" fontSize:16*2];
     miss_count_label.anchorPoint = ccp(1, 1);
     miss_count_label.position = ccp(win_size.width - 12, win_size.height - 4);
     [self addChild: miss_count_label z:12 tag:O_MISS_COUNT_LABEL];
 		
     // Same for stage label
-    CCLabelTTF* stage_label = [CCLabelTTF labelWithString:@"Stage: 1" fontName:@"Marker Felt" fontSize:16];
+    CCLabelTTF* stage_label = [CCLabelTTF labelWithString:@"Stage: 1" fontName:@"Marker Felt" fontSize:16*2];
     stage_label.anchorPoint = ccp(0.5, 1);
     stage_label.position = ccp(win_size.width/2, win_size.height - 4);
     [self addChild: stage_label z:12 tag:O_STAGE_LABEL];
@@ -348,7 +348,7 @@
       flight_duration = 64;
 
       for(int j = 1; j <= MAX_CLOUDS; j++) {
-	int height = win_size.height - 70 + (40 * (i - 1)) + (arc4random() % 16);
+	int height = win_size.height - 140 + (80 * (i - 1)) + (arc4random() % 16);
 
 	CCSprite *cloud = [CCSprite spriteWithFile:[NSString stringWithFormat:@"cloud%d.png", 1 + arc4random() % 4]];
 	float path = 1.0/MAX_CLOUDS * j;

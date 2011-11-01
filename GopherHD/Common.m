@@ -7,11 +7,17 @@
 //
 
 #import "Common.h"
+#import "AppSpecificValues.h"
+//#import <GameKit/GameKit.h>
 
 @implementation Common
 
 @synthesize run;
 @synthesize wscene;
+@synthesize currentLeaderBoard;
+@synthesize gameCenterManager;
+@synthesize rootViewController = _rootViewController;
+@synthesize finalscore;
 
 + (Common*) instance  {
 	static Common* instance;
@@ -29,13 +35,101 @@
 	self = [super init];
 	if(self !=nil) {
 
+        
+        self.currentLeaderBoard = kLeaderboardHighScores;
+        
+        if ([GameCenterManager isGameCenterAvailable]) {
+            
+            self.gameCenterManager = [[[GameCenterManager alloc] init] autorelease];
+            [self.gameCenterManager setDelegate:self];
+            [self.gameCenterManager authenticateLocalUser];
+            // [self.gameCenterManager resetAchievements];
+            
+            /*GKLocalPlayer *localplayer = [GKLocalPlayer localPlayer];
+             [localplayer authenticateWithCompletionHandler:^(NSError *error) {
+             if (error) {
+             NSLog(@"DISABLE GAME CENTER FEATURES / SINGLEPLAYER");
+             }
+             else {
+             NSLog(@"ENABLE GAME CENTER FEATURES / MULTIPLAYER");
+             }
+             }];*/
+            
+        } else {
+            
+            NSLog(@"The current device does not support Game Center.");
+            
+        }
+
 	}
 	return self;	
 }
 
+- (void) processGameCenterAuth: (NSError*) error {
+    
+    if (error == nil) {
+        
+        NSLog(@"processGameCenterAuth OK");
+    }
+    else
+        NSLog(@"processGameCenterAuth Error: %@", [error localizedDescription]);
+}
+
+- (void) registerForAuthenticationNotification {
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver: self
+           selector:@selector(authenticationChanged)
+               name:GKPlayerAuthenticationDidChangeNotificationName
+             object:nil];
+}
+
+- (void) authenticationChanged {
+    
+    if ([GKLocalPlayer localPlayer].isAuthenticated) {
+        
+        NSLog(@"Player is authenticated");
+    }
+    else {
+        
+        NSLog(@"Player is not authenticated");
+    }
+}
+
+- (void) submitScore {
+    
+    if(self.finalscore > 0) {
+        
+        [self.gameCenterManager reportScore: self.finalscore forCategory: self.currentLeaderBoard];
+        
+    }
+}
+
+- (void) showLeaderboard {
+    
+    GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
+    if (leaderboardController != NULL) {
+        
+        leaderboardController.category = self.currentLeaderBoard;
+        leaderboardController.timeScope = GKLeaderboardTimeScopeWeek;
+        leaderboardController.leaderboardDelegate = self;
+        [self.rootViewController presentModalViewController:leaderboardController animated:YES];
+    }
+    
+}
+
+- (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController {
+    
+    NSLog(@"leaderboardViewControllerDidFinish");
+}
 
 - (void) dealloc {
 	
+    self.gameCenterManager = nil;
+    self.currentLeaderBoard = nil;
+
+    [_rootViewController release];
+    
 	[super dealloc];
 }
 

@@ -32,13 +32,13 @@
 	//
 
 //	CC_ENABLE_DEFAULT_GL_STATES();
-//	CCDirector *director = [CCDirector sharedDirector];
-//	CGSize size = [director winSize];
-//	CCSprite *sprite = [CCSprite spriteWithFile:@"Default.png"];
-//	sprite.position = ccp(size.width/2, size.height/2);
-//	sprite.rotation = -90;
-//	[sprite visit];
-//	[[director openGLView] swapBuffers];
+	CCDirector *director = [CCDirector sharedDirector];
+	CGSize size = [director winSize];
+	CCSprite *sprite = [CCSprite spriteWithFile:@"Default-Portrait~ipad.png"];
+	sprite.position = ccp(size.width/2, size.height/2);
+	sprite.rotation = -90;
+	[sprite visit];
+	[[director openGLView] swapBuffers];
 //	CC_ENABLE_DEFAULT_GL_STATES();
 }
 
@@ -54,6 +54,8 @@
 	viewController_ = [[RootViewController alloc] initWithNibName:nil bundle:nil];
 	viewController_.wantsFullScreenLayout = YES;
 	
+    [Common instance].rootViewController = viewController_;
+    
 	//
 	// Create the EAGLView manually
 	//  1. Create a RGB565 format. Alternative: RGBA8

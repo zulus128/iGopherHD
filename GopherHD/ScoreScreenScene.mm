@@ -3,6 +3,7 @@
 #import "GameScreenScene.h"
 #import "StatsScreenScene.h"
 #import "ScoreScreenScene.h"
+#import "Common.h"
 
 // ScoreScreen implementation
 @implementation ScoreScreen
@@ -38,7 +39,16 @@
 		self.isTouchEnabled = YES;
 		self.isAccelerometerEnabled = YES;
 		
-		// Clocks
+        
+        [Common instance].finalscore = lastGameStats.score;
+        [[Common instance] submitScore];
+        [[Common instance] showLeaderboard];
+        
+        nextScene = NULL;
+		[[CCDirector sharedDirector] replaceScene: [WelcomeScreen scene]];
+        
+	/*
+        // Clocks
 		[self schedule:@selector(update:)];
 		
 		// Background
@@ -160,7 +170,7 @@
 
 		  [playerNameEntry becomeFirstResponder];
 
-		}
+		}*/
 	}
 	return self;
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD92D4ED145F6C1C00A1CB63 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D4EC145F6C1C00A1CB63 /* GameKit.framework */; };
+		DD92D4F2145F6C8E00A1CB63 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD92D4F1145F6C8E00A1CB63 /* GameCenterManager.m */; };
+		DD92D4F4145F735800A1CB63 /* Default-Portrait~ipad-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DD92D4F3145F735800A1CB63 /* Default-Portrait~ipad-ipad.png */; };
 		DD96591E1453C684007BCDCB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD96591D1453C684007BCDCB /* QuartzCore.framework */; };
 		DD9659201453C684007BCDCB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD96591F1453C684007BCDCB /* OpenGLES.framework */; };
 		DD9659221453C684007BCDCB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9659211453C684007BCDCB /* OpenAL.framework */; };
@@ -200,6 +203,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD92D4EC145F6C1C00A1CB63 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		DD92D4EF145F6C8E00A1CB63 /* AppSpecificValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSpecificValues.h; sourceTree = "<group>"; };
+		DD92D4F0145F6C8E00A1CB63 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
+		DD92D4F1145F6C8E00A1CB63 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
+		DD92D4F3145F735800A1CB63 /* Default-Portrait~ipad-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad-ipad.png"; sourceTree = "<group>"; };
 		DD9659191453C684007BCDCB /* GopherHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GopherHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD96591D1453C684007BCDCB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DD96591F1453C684007BCDCB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -523,6 +531,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD92D4ED145F6C1C00A1CB63 /* GameKit.framework in Frameworks */,
 				DD96591E1453C684007BCDCB /* QuartzCore.framework in Frameworks */,
 				DD9659201453C684007BCDCB /* OpenGLES.framework in Frameworks */,
 				DD9659221453C684007BCDCB /* OpenAL.framework in Frameworks */,
@@ -537,11 +546,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD92D4EE145F6C6900A1CB63 /* GK */ = {
+			isa = PBXGroup;
+			children = (
+				DD92D4EF145F6C8E00A1CB63 /* AppSpecificValues.h */,
+				DD92D4F0145F6C8E00A1CB63 /* GameCenterManager.h */,
+				DD92D4F1145F6C8E00A1CB63 /* GameCenterManager.m */,
+			);
+			name = GK;
+			sourceTree = "<group>";
+		};
 		DD96590E1453C683007BCDCB = {
 			isa = PBXGroup;
 			children = (
+				DD92D4EC145F6C1C00A1CB63 /* GameKit.framework */,
 				F27DCB5A1459703500C9075A /* Default-Portrait~ipad.png */,
 				F25AFBF914556EDF00D85669 /* Default-Landscape~ipad.png */,
+				DD92D4F3145F735800A1CB63 /* Default-Portrait~ipad-ipad.png */,
 				DD96592D1453C684007BCDCB /* GopherHD */,
 				DD96591C1453C684007BCDCB /* Frameworks */,
 				DD96591A1453C684007BCDCB /* Products */,
@@ -574,6 +595,7 @@
 		DD96592D1453C684007BCDCB /* GopherHD */ = {
 			isa = PBXGroup;
 			children = (
+				DD92D4EE145F6C6900A1CB63 /* GK */,
 				DD965ACB1453C798007BCDCB /* Common.h */,
 				DD965ACC1453C798007BCDCB /* Common.m */,
 				DD965ACD1453C798007BCDCB /* WelcomeScreenScene.h */,
@@ -1170,6 +1192,7 @@
 				F25AFBF814556E0300D85669 /* about-screen.png in Resources */,
 				F25AFBFA14556EDF00D85669 /* Default-Landscape~ipad.png in Resources */,
 				F27DCB5C1459743900C9075A /* Default-Portrait~ipad.png in Resources */,
+				DD92D4F4145F735800A1CB63 /* Default-Portrait~ipad-ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1285,6 +1308,7 @@
 				DD965AE21453C799007BCDCB /* StatsScreenScene.mm in Sources */,
 				DD965AE31453C799007BCDCB /* ScoreScreenScene.mm in Sources */,
 				DD965AE41453C799007BCDCB /* AboutScreenScene.m in Sources */,
+				DD92D4F2145F6C8E00A1CB63 /* GameCenterManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

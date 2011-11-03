@@ -42,7 +42,7 @@
 //		background.anchorPoint = ccp(0, 0);
 //		background.position = ccp(0, 0);
 		
-		[self addChild:background z:0];
+		[self addChild:background z:8];
 		
 		// ask director the the window size
 		CGSize win_size = [[CCDirector sharedDirector] winSize];
@@ -55,6 +55,12 @@
 
 		[self addChild:background1 z:10];
 
+        CCSprite* sky = [CCSprite spriteWithFile:@"sky.png"];
+        sky.anchorPoint = ccp(0, 0);
+        sky.position = ccp(0, 0);
+		
+        [self addChild:sky z:7];
+        
         // Clouds
         int start_position = -50;
         int end_position = win_size.width + 50;
@@ -79,7 +85,7 @@
             
             id repeater = [CCRepeat actionWithAction: [CCSequence actions: reset_position, rest_transition, nil] times: 65536];
             
-            [self addChild:cloud z:-1];
+            [self addChild:cloud z:9];
             [cloud runAction:[CCSequence actions: first_transition, repeater, nil]];
         }
     }

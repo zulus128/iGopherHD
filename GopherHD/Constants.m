@@ -40,8 +40,8 @@ int const O_SOUND_OFF = 513;
 bool musicOn;
 bool soundOn;
 
-CGPoint MUSIC_POS = {70, 24};
-CGPoint SOUND_POS = {160, 24};
+CGPoint MUSIC_POS = {120, 34};
+CGPoint SOUND_POS = {220, 34};
 
 int const HOLE_TABLE[20] = { 2,3,3,3,3,4,4,4,4,5,5,5,5,5,6,6,6,6,6,6 };//v1
 
@@ -71,7 +71,7 @@ int const SPEED_TABLE[20][3] = {
 
 // Holes position
 //int const HOLES_POSITIONS[6][2] = { {110, 70}, {370, 70}, {240, 115}, {240, 40}, {390, 145}, {90, 145} };
-int const HOLES_POSITIONS[6][2] = { {200, 200}, {824, 200}, {512, 350}, {512, 80}, {924, 400}, {100, 400} };
+int const HOLES_POSITIONS[6][2] = { {220, 200}, {824, 200}, {512, 350}, {512, 80}, {924, 400}, {100, 400} };
 //int const MOLE_OFFSET[2] = {9,30};
 int const MOLE_OFFSET[2] = {9,70};
 

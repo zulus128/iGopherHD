@@ -1,6 +1,6 @@
 
 //Leaderboard Category IDs
-#define kLeaderboardHighScores @"01"
+#define kLeaderboardHighScores @"GHD645302"
 #define kLeaderboardCumulative @"02"
 
 //Achievement IDs

@@ -11,6 +11,7 @@
 extern int const O_HOLE;//v1
 extern int const O_MOLE;
 extern int const O_DUST;
+extern int const O_LEVELUP;
 extern int const O_SCORE_LABEL;
 extern int const O_MISS_COUNT_LABEL;
 extern int const O_STAGE_LABEL;

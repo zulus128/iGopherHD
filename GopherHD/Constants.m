@@ -11,6 +11,7 @@
 int const O_HOLE = 1024;//v1
 int const O_MOLE = 128;
 int const O_DUST = 192;
+int const O_LEVELUP = 300;
 int const O_SCORE_LABEL = 12;
 int const O_MISS_COUNT_LABEL = 16;
 int const O_STAGE_LABEL = 18;

@@ -102,6 +102,8 @@
         
         [self.gameCenterManager reportScore: self.finalscore forCategory: self.currentLeaderBoard];
         
+        NSLog(@"Game Center submit %d score", self.finalscore);
+        
     }
 }
 

@@ -316,6 +316,21 @@
     sound_off.visible = soundOn ? NO : YES;
     [self addChild:sound_off z:900 tag:O_SOUND_OFF];
 
+      
+      CCSprite* levelup = [CCSprite spriteWithFile:@"level_up.png"];
+      levelup.position = ccp(512,384);
+      levelup.opacity = 100;
+      [self addChild:levelup z:1000 tag:O_LEVELUP];
+      [levelup runAction: [CCHide action]];
+
+//      CCLabelTTF *lu_label = (CCLabelTTF *)[self getChildByTag:O_LEVELUP+1];
+      CCLabelTTF* lu_label = [CCLabelTTF labelWithString:@"1" fontName:@"Marker Felt" fontSize:44];
+      lu_label.anchorPoint = ccp(0.5, 1);
+      [lu_label setString:@"1"];
+      lu_label.position = ccp(512,260);
+      [self addChild:lu_label z:1001 tag:O_LEVELUP + 1];
+      [lu_label runAction: [CCHide action]];
+      
     //
     // Sprites
     //
@@ -366,6 +381,9 @@
 	[cloud runAction:[CCSequence actions: first_transition, repeater, nil]];
       }
     }
+
+      
+      
 
     // Gophers
     molesOnScreen = 0;
@@ -420,12 +438,41 @@
 		};
 	}
   
+    int stage1 = stage;
 	stage = (vstage > 19) ? 19 : vstage;
+    
+    if(stage1 != stage) {
+
+        NSLog(@"stage = %d", stage);
+
+        CCSprite *levelup = (CCSprite *)[self getChildByTag:O_LEVELUP];
+        
+//        id rotation = [CCRotateBy actionWithDuration:0.5 angle: 90];
+        id scale = [CCEaseOut actionWithAction:[CCScaleTo actionWithDuration:1.0 scale:1.0] rate:2];
+        id opacity = [CCEaseOut actionWithAction:[CCFadeOut actionWithDuration: 1.0] rate:0.5];
+        id restore = [CCSpawn actions: /*[CCRotateTo actionWithDuration:0 angle:0],*/ [CCScaleTo actionWithDuration:0 scale:0.1], nil];
+
+        id cw_action = [CCSpawn actions: /*rotation,*/ scale, opacity, nil];
+        [levelup runAction: [CCSequence actions: restore, [CCFadeIn actionWithDuration:0], [CCShow action], cw_action, [CCHide action], nil]];
+        
+        CCLabelTTF *lu_label = (CCLabelTTF *)[self getChildByTag:O_LEVELUP+1];
+        [lu_label setString:[NSString stringWithFormat:@"%d", stage+1]];
+        lu_label.position = ccp(512, 320);
+        [lu_label runAction: 
+         [CCSequence actions: [CCScaleTo actionWithDuration:0 scale:0.1],
+          [CCFadeIn actionWithDuration:0],
+          [CCShow action],
+          [CCEaseOut actionWithAction:[CCScaleTo actionWithDuration:1.0 scale:2.0] rate:2],
+          [CCHide action], nil]];
+        [lu_label runAction:[CCMoveTo actionWithDuration:1.0 position:ccp(512, 220)]];
+
+    }
 
   // Updating HUD labels
   CCLabelTTF *stage_label = (CCLabelTTF *)[self getChildByTag:O_STAGE_LABEL];
   [stage_label setString:[NSString stringWithFormat:@"Stage: %d", stage + 1]];
 
+    
   totalTime += deltaTime;
 
   // Ticking our gophers

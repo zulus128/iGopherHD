@@ -107,6 +107,18 @@
     }
 }
 
+- (void) scoreReported:(NSError *)error {
+    
+    if(error == NULL) {
+
+        NSLog(@"Score reported!");
+    }
+    else {
+        
+        NSLog(@"Score report failed. Reason: %@", [error localizedDescription]);
+    }
+}
+
 - (void) showLeaderboard {
     
     GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];

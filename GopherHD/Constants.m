@@ -27,7 +27,7 @@ int const O_WEL_ABOUT_LABEL = 3;
 int const O_PAUSE_RESUME_LABEL = 16;
 int const O_PAUSE_MENU_LABEL = 17;
 
-float const STAGE_INTERVAL = 12; // Stage length
+float const STAGE_INTERVAL = 24;//12; // Stage length
 float CHECK_INTERVAL = 0.1f; // Mole action check interval
 
 bool isFirstTime;

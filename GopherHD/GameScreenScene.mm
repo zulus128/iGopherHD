@@ -449,11 +449,11 @@
         
 //        id rotation = [CCRotateBy actionWithDuration:0.5 angle: 90];
         id scale = [CCEaseOut actionWithAction:[CCScaleTo actionWithDuration:1.0 scale:1.0] rate:2];
-        id opacity = [CCEaseOut actionWithAction:[CCFadeIn actionWithDuration: 1.0] rate:0.5];
+        id opacity = [CCEaseOut actionWithAction:[CCFadeOut actionWithDuration: 1.0] rate:0.5];
         id restore = [CCSpawn actions: /*[CCRotateTo actionWithDuration:0 angle:0],*/ [CCScaleTo actionWithDuration:0 scale:0.1], nil];
 
         id cw_action = [CCSpawn actions: /*rotation,*/ scale, opacity, nil];
-        [levelup runAction: [CCSequence actions: restore, [CCFadeIn actionWithDuration:0], [CCShow action], cw_action, [CCDelayTime actionWithDuration:1.0], [CCHide action], nil]];
+        [levelup runAction: [CCSequence actions: restore, [CCFadeIn actionWithDuration:0], [CCShow action], cw_action, /*[CCDelayTime actionWithDuration:1.0],*/ [CCHide action], nil]];
         
         CCLabelTTF *lu_label = (CCLabelTTF *)[self getChildByTag:O_LEVELUP+1];
         [lu_label setString:[NSString stringWithFormat:@"%d", stage+1]];
@@ -463,7 +463,7 @@
           [CCFadeIn actionWithDuration:0],
           [CCShow action],
           [CCEaseOut actionWithAction:[CCScaleTo actionWithDuration:1.0 scale:2.0] rate:2],
-          [CCDelayTime actionWithDuration:1.0],
+          //[CCDelayTime actionWithDuration:1.0],
           [CCHide action], nil]];
         [lu_label runAction:[CCMoveTo actionWithDuration:1.0 position:ccp(512, 220)]];
 

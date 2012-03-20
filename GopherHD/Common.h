@@ -10,7 +10,7 @@
 #import "WelcomeScreenScene.h"
 #import "GameCenterManager.h"
 #import <GameKit/GameKit.h>
-
+//
 @class RootViewController;
 
 @interface Common : NSObject <GameCenterManagerDelegate, GKLeaderboardViewControllerDelegate> {

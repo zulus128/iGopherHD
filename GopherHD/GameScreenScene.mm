@@ -179,7 +179,7 @@
       }
 
       currentStateSetTime = [parent totalTime];
-      nextStateSetTime = [parent totalTime] + ((float)(SPEED_TABLE[stage][1] + arc4random() % SPEED_TABLE[stage][2]) / 1000);
+      nextStateSetTime = [parent totalTime] + ((float)((SPEED_TABLE[stage][1] - 400) + arc4random() % (SPEED_TABLE[stage][2] - 800)) / 1000);
 	
     }
   };

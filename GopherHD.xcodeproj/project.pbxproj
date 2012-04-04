@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		365C5837152C05760088DC06 /* icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 365C5836152C05760088DC06 /* icon-144.png */; };
 		DD92D4ED145F6C1C00A1CB63 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D4EC145F6C1C00A1CB63 /* GameKit.framework */; };
 		DD92D4F2145F6C8E00A1CB63 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD92D4F1145F6C8E00A1CB63 /* GameCenterManager.m */; };
 		DD92D4F4145F735800A1CB63 /* Default-Portrait~ipad-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DD92D4F3145F735800A1CB63 /* Default-Portrait~ipad-ipad.png */; };
@@ -221,6 +222,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		365C5836152C05760088DC06 /* icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-144.png"; sourceTree = "<group>"; };
 		DD92D4EC145F6C1C00A1CB63 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		DD92D4EF145F6C8E00A1CB63 /* AppSpecificValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSpecificValues.h; sourceTree = "<group>"; };
 		DD92D4F0145F6C8E00A1CB63 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 		DD96590E1453C683007BCDCB = {
 			isa = PBXGroup;
 			children = (
+				365C5836152C05760088DC06 /* icon-144.png */,
 				DD92D4EC145F6C1C00A1CB63 /* GameKit.framework */,
 				F27DCB5A1459703500C9075A /* Default-Portrait~ipad.png */,
 				F25AFBF914556EDF00D85669 /* Default-Landscape~ipad.png */,
@@ -1265,6 +1268,7 @@
 				F2C6AE661511ED0600768A00 /* level_up.png in Resources */,
 				F2C6AE671511ED0600768A00 /* level_up@2x.png in Resources */,
 				DDB32CBE15124D8A0067DF2B /* shot-smoke-1@2x.png in Resources */,
+				365C5837152C05760088DC06 /* icon-144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
